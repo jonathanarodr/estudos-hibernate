@@ -1,2 +1,2 @@
-# estudos-hibernate
-https://www.alura.com.br/curso-online-jpa
+# Curso - Java e JPA: Persista seus objetos com a JPA2 e Hibernate
+
