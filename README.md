@@ -18,6 +18,31 @@ _Exemplo_:
 
 ```
 
+### `@Enumerated`
+Anotação para configurar tipo de dados `enum`, possibilitando determinar o seu tipo de dados.
+
+_Exemplo_:
+
+```
+// Declarando enum
+public enum Sexo {
+	Masculino, Feminino
+}
+
+// Uso do tipo Sexo
+@Enumerated(EnumType.STRING) //determinamos o EnumType como STRING para que o Hibernate armazene no banco de dados o valor do enum como varchar
+private Sexo sexo;
+```
+
+### `@Temporal`
+Anotação utilizada para determinar o formato de data que será persistido.
+* @Temporal(TemporalType.DATE)
+* @Temporal(TemporalType.TIME)
+* @Temporal(TemporalType.TIMESTAMP)
+
+### `@ManyToOne e @OneToMany`
+Anotação utilizada para especificar cardinalidade entre as entidades de `1..n` e `n..1`.
+
 ## Dialect
 A definição do dialect permite que o Hibernate faça o cruzamento de suas funções com as funções do banco de dados utilizado.
 * **Oracle 10g**: org.hibernate.dialect.Oracle10gDialect
@@ -28,6 +53,16 @@ A definição do dialect permite que o Hibernate faça o cruzamento de suas fun�
 * **Sybase ASE 15**: org.hibernate.dialect.SybaseASE15Dialect
 * **HSQLDB**: org.hibernate.dialect.HSQLDialect
 
-### ``
+## `Métodos importantes da classe EntityManager`
+* `persist` : método para inserção de novos registros.
+* `find` : método para seleção de registros persistidos.
+* `merge` : método para alteração de estado da entidade permitindo sua atualização.
+* `remove` : método para exclusão de registros.
+
+## Estados do JPA
+* managed: entidade sincronizada com o banco de dados - find
+* transient: entidade nunca persistida no banco de dados - persit
+* detached: entidade que já possuí uma representação no banco de dados - merge
+* removed: entidade removida do banco de dados - remove
 
 ### ``
