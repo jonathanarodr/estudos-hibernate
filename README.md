@@ -40,8 +40,12 @@ Anotação utilizada para determinar o formato de data que será persistido.
 * @Temporal(TemporalType.TIME)
 * @Temporal(TemporalType.TIMESTAMP)
 
-### `@ManyToOne e @OneToMany`
-Anotação utilizada para especificar cardinalidade entre as entidades de `1..n` e `n..1`.
+### `@OneToOne @OneToMany @ManyToOne @ManyToMany`
+Anotação utilizada para especificar cardinalidade entre as entidades:
+* `@OneToOne` - 1 .. 1
+* `@OneToMany` - 1 .. n
+* `@ManyToOne` - n .. 1
+* `@ManyToMany` - n .. n
 
 ## Dialect
 A definição do dialect permite que o Hibernate faça o cruzamento de suas funções com as funções do banco de dados utilizado.
@@ -53,7 +57,7 @@ A definição do dialect permite que o Hibernate faça o cruzamento de suas fun�
 * **Sybase ASE 15**: org.hibernate.dialect.SybaseASE15Dialect
 * **HSQLDB**: org.hibernate.dialect.HSQLDialect
 
-## `Métodos importantes da classe EntityManager`
+## Métodos importantes da classe EntityManager
 * `persist` : método para inserção de novos registros.
 * `find` : método para seleção de registros persistidos.
 * `merge` : método para alteração de estado da entidade permitindo sua atualização.
