@@ -82,6 +82,19 @@ public class Conta {
 }
 ```
 
+### `@NamedQuery`
+Anotação utilizada para criar querys diretamente pela classe modelo, sua vantagem é que esta anotação não permite a concatenação de comando aplicando boas práticas de programação e também caso haja qualquer alteração na classe modelo como exclusão de um atributo na qual esta sendo utilizado pela anotação é exibido uma exceção evitando que o problema seja descoberto somente em excução.
+
+_Exemplo_:
+
+```
+//Declarando NamedQuery
+@NamedQuery(name = "nameQuery", query = "comandoJPQL")
+
+//Uso do NamedQuery
+TypedQuery<Type> query = EntityManager.createNamedQuery("nameQuery", Type.class);
+```
+
 ### Comportamentos
 * _`LAZY`_ - comportamento do relacionamento `ToMany`, recupera dados dos relacionamentos somente quando são demandados economizando processamento de dados desnecessários.
 * _`EAGER`_ - comportamento do relacionamento `ToMany`, sempre recupera dados dos relacionamentos.
